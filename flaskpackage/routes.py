@@ -13,5 +13,5 @@ def home():
         #calculation = Calculation(height=form.height.data, angle=form.angle.data)
         #db.session.add(calculation)
         #db.session.commit()
-        session['RESULT'] = round(calculate(float(form.height.data), float(form.angle.data)), 2)
+        session['RESULT'] = round(calculate(float(form.height.data), float(form.angle.data)), 3)
     return render_template('home.html', form=form, result=session['RESULT'])
