@@ -1,10 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField 
-from wtforms.fields import TextAreaField
-from wtforms.validators import DataRequired, Length
+from wtforms import SubmitField 
+from wtforms.fields import DecimalField
+from wtforms.validators import DataRequired
 
-
-class AddNoteForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired(), Length(min=2, max=50)])
-    text = TextAreaField('Text', validators=[DataRequired(), Length(min=2, max=500)])
-    submit = SubmitField('Add')
+class CalculateTrangleForm(FlaskForm):
+    height = DecimalField('Height', validators=[DataRequired()])
+    angle = DecimalField('Angle', validators=[DataRequired()])
+    submit = SubmitField('Calculate')

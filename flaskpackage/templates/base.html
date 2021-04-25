@@ -13,9 +13,9 @@
 
         <!-- Title -->
         {% if title %}
-            <title>{{ title }} | Bolek</title>
+            <title>{{ title }} | Trangle Calculator</title>
         {% else %}
-            <title>Bolek</title>
+            <title>Trangle Calculator</title>
         {% endif %}
 
         <!-- Favicon -->
@@ -30,13 +30,10 @@
             <!-- Brand -->
             <a class="navbar-brand" href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='puzzle.png') }}" width="30" height="30" class="d-inline-block align-top" alt=""></img>
-                Bolek
+                Trangle Calculator
             </a>
             <!-- Navbar buttons (on the right) -->
             <div>
-                <a href="{{ url_for('add_note') }}" class="">
-                    <span data-feather="plus-circle" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;"></span>
-                </a>
             </div>       
         </nav>
         

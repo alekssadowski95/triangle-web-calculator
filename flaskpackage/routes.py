@@ -1,22 +1,14 @@
-from flask import render_template, redirect, url_for
+from flask import render_template
 from flaskpackage import app, db
-from flaskpackage.models import Note
-from flaskpackage.forms import AddNoteForm
-from sqlalchemy import desc
+from flaskpackage.models import Calculation
+from flaskpackage.forms import CalculateTrangleForm
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    # get all notes from the database and order by newest ones coming first
-    notes = Note.query.order_by(desc(Note.id)).all()
-    return render_template('home.html', notes=notes)
-
-@app.route('/new', methods=['GET', 'POST'])
-def add_note():
-    form = AddNoteForm()
+    form = CalculateTrangleForm()
     if form.validate_on_submit():
-        note = Note(title=form.title.data, text=form.text.data)
-        db.session.add(note)
+        calculation = Calculation(height=form.height.data, angle=form.angle.data)
+        db.session.add(calculation)
         db.session.commit()
-        return redirect(url_for('home'))
-    return render_template('add-note.html', title='New note', form=form)
+    return render_template('home.html', form=form)

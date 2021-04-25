@@ -1,10 +1,10 @@
 from flaskpackage import db
 
 
-class Note(db.Model):
+class Calculation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(20), nullable=False)
-    text = db.Column(db.String(20), nullable=False)
+    height = db.Column(db.Float, nullable=False)
+    angle = db.Column(db.Float, nullable=False)
 
     def __repr__(self):
-        return f'Note("{self.title}","{self.text}")'
+        return f'Calculation("{self.height}","{self.angle}")'
