@@ -8,20 +8,20 @@
             <legend class="mr-auto" style="font-size: 1.8rem;">Calculate triangle</legend>
             
             <div class="form-group">
-                <div>{{ form.title.label() }}</div>
-                <div>{{ form.title(class="form-control") }}</div>
-                {% if form.title.errors %}
-                    {% for error in form.title.errors %}
+                <div>{{ form.height.label() }}</div>
+                <div>{{ form.height(class="form-control") }}</div>
+                {% if form.height.errors %}
+                    {% for error in form.height.errors %}
                         <span class="text-danger">{{ error }}</span></br>
                     {% endfor %}
                 {% endif %}
             </div>
 
             <div class="form-group">
-                <div>{{ form.text.label() }}</div>
-                <div>{{ form.text(class="form-control") }}</div>
-                {% if form.text.errors %}
-                    {% for error in form.text.errors %}
+                <div>{{ form.angle.label() }}</div>
+                <div>{{ form.angle(class="form-control") }}</div>
+                {% if form.angle.errors %}
+                    {% for error in form.angle.errors %}
                         <span class="text-danger">{{ error }}</span></br>
                     {% endfor %}
                 {% endif %}
@@ -30,5 +30,6 @@
             <div>{{ form.submit(class="btn btn-primary") }}</div>
         </fieldset>
     </form>
+    <p>{{ result }}</p>
 </div>
 {% endblock content %}
